@@ -4,7 +4,7 @@ terraform {
   required_providers {
     aws = {
         source = "hashicorp/aws"
-        version = "> 6.0.0"
+        version = "~>5.100"
     }
   }
 
@@ -12,6 +12,12 @@ terraform {
     bucket = "tf-state-file-container"
     region = "ap-south-1"
     key = "eks/cluster-state"
+    profile = "myprofile"
   }
+}
+
+provider "aws" {
+  region = "ap-south-1"
+  profile = "myprofile"
 }
 
